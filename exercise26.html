@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Image Styling</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 40px;
+            background-color: #f0f0f0;
+        }
+
+        .img-left {
+            width: 33%;
+            height: 300px;
+            border-radius: 18px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .img-center {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #999;
+            flex-shrink: 0;
+        }
+
+        .img-right {
+            width: 33%;
+            height: 300px;
+            object-fit: fill;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <img class="img-left"   src="eiffel_tower.jpg" alt="Eiffel Tower - left">
+
+    <img class="img-center" 
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/24701-nature-natural-beauty.jpg/1280px-24701-nature-natural-beauty.jpg" 
+         alt="Mountain river aerial">
+
+    <img class="img-right"  src="eiffel_tower.jpg" alt="Eiffel Tower - right">
+
+</body>
+</html>
