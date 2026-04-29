@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Button Demo</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #dynamic-text {
+    font-size: 1.5rem;
+    color: black;
+  }
+
+  button {
+    padding: 6px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <p id="dynamic-text">Hello</p>
+  <button id="btn">Button</button>
+</div>
+
+<script>
+  var clicked = false;
+  var text = document.getElementById('dynamic-text');
+  var btn = document.getElementById('btn');
+
+  btn.addEventListener('mouseover', function() {
+    if (!clicked) {
+      text.textContent = 'Hello';
+      text.style.color = 'hotpink';
+    }
+  });
+
+  btn.addEventListener('mouseout', function() {
+    if (!clicked) {
+      text.textContent = 'Hello';
+      text.style.color = 'black';
+    }
+  });
+
+  btn.addEventListener('click', function() {
+    clicked = true;
+    text.textContent = 'Mouse Click';
+    text.style.color = 'hotpink';
+    setTimeout(function() {
+      clicked = false;
+      text.textContent = 'Hello';
+      text.style.color = 'black';
+    }, 2000);
+  });
+</script>
+
+</body>
+</html>
